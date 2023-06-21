@@ -35,7 +35,8 @@ body {
 #aboutContainer {
     margin-left:3rem!important;
     margin-right:3rem!important;
-    height: calc(100vh - 50px)
+    position:relative;
+    height: 100vh
 }
 
 .contact-container .about-text {
@@ -50,12 +51,14 @@ body {
 
 
 #projectsContainer {
-    height: calc(100vh - 51px)
+    height: 100vh;
 }
 
 .mainNav{
     display:inline-flex;
     width:100%;
+    position: absolute;
+    z-index: 10000000000;
 }
 
 .mainNav span {
@@ -122,17 +125,20 @@ body {
 
 @media (max-width: 800px) {
 
+    #projectsContainer {
+        height: 100vh;
+    }
+    .mainNav {
+        position: absolute;
+    }
     #aboutContainer{
         height: unset;
+        top:51px;
         margin-left: 0!important;
         margin-right:0!important;
     }
     .mainNav .brand {
         font-size: 20px;
-    }
-    
-    #aboutContainer {
-        margin-top: 1rem
     }
 
     .mainNav .links span {
@@ -195,7 +201,6 @@ body {
     }
 
     .mainNav {
-        z-index: 10000000000;
         flex-direction:column;
     }
 }

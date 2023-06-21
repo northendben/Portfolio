@@ -3,44 +3,45 @@ const toggler = document.querySelector('.toggler')
 toggler.addEventListener('click', toggleNav)
 
 function toggleNav () {
-    console.log('click')
     toggler.addEventListener('click', toggleNav)
     const mobileNavLinks = document.querySelector('.links')
     const mobileNavLinkDisplayStyle = window.getComputedStyle(mobileNavLinks).display
-    const projectContainer = document.querySelector('#projectContainer')
+    const aboutContainer = document.querySelector('#aboutContainer')
     if(mobileNavLinkDisplayStyle === 'none') {
-        showNav(mobileNavLinks, projectContainer)
+        showNav(mobileNavLinks, aboutContainer)
     } else { 
-        hideNav(mobileNavLinks, projectContainer)
+        hideNav(mobileNavLinks, aboutContainer)
     }
 }
 
-function showNav (navContainer, projectContainer) {
-    console.log('show')
+function showNav (navContainer, aboutContainer) {
     navContainer.style.display ='inline-flex'
-    const linksHeight = navContainer.offsetHeight
-    // projectContainer.style.position = 'relative'
-    // projectContainer.style.top = `${linksHeight}px`
+    const fullNavHeight = document.querySelector('.mainNav').offsetHeight
+    aboutContainer.style.top = `${fullNavHeight}px`
 }
-function hideNav (navContainer, projectContainer) {
-    console.log('hide')
-    // projectContainer.style.position = null
-    // projectContainer.style.top = null
+function hideNav (navContainer, aboutContainer) {
+    aboutContainer.style.top = '51px'
     navContainer.style.display ='none'
 }
 
-window.addEventListener('resize', handleHiddenNav)
+window.addEventListener('resize', handleSizeSwitch)
 
-function handleHiddenNav() {
+function handleSizeSwitch() {
     const currentSize = window.innerWidth 
     const mobileNavLinks = document.querySelector('.links')
-    const projectContainer = document.querySelector('#projectContainer')
+    const aboutContainer = document.querySelector('#aboutContainer')
     const linksHeight = mobileNavLinks.offsetHeight
     if(currentSize > 800){
+        if(parseInt(window.getComputedStyle(aboutContainer).top) > 0){
+            aboutContainer.style.top = '0px'
+        }
         if(window.getComputedStyle(mobileNavLinks).display === 'none'){
             mobileNavLinks.style.display ='inline-flex'
         }
     } else {
+        if(parseInt(window.getComputedStyle(aboutContainer).top) < 51){
+            aboutContainer.style.top ='51px'
+        }
         mobileNavLinks.style.display = 'none'
         }
 }

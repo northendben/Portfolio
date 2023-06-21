@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjamin Persitz's Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://kit.fontawesome.com/80a82024f0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,600;0,700;1,100&display=swap" rel="stylesheet">
+</head>
+<%-include('./partials/nav')%>
+<body class="" id="mainPageBody">
+    <div id="projectsContainer"class="px-0 d-flex flex-column justify-content-center align-items-center content-container">
+        <p class="intro-text large"></p>
+        <p class="intro-text large"></p>
+        <p id="nameContainer" class="intro-text large name-text"></p>
+        <p class="intro-text text-center large"></p>
+        <div id="projectCarousel" class="carousel slide hide" data-interval="false">
+            <div class="carousel-inner">
+              <div class="carousel-item my-3 active data-bs-interval="50000">
+                <div class="text-center my-3">
+                    <h2><a class="carousel-links carousel-text mb-2" href="https://yelpcamp.benjaminpersitz.dev">YelpCamp</a></h2>
+                </div>
+                <img src="/images/YelpCampThumb.png" class="d-block w-100 carousel-photo" alt="...">
+                <div class="text-center">
+                    <p class="carousel-text fs-4 mt-3">Full-stack Node JS Application with MongoDB Atlas</p>
+                </div>
+              </div>
+              <div class="carousel-item  my-3 data-bs-interval="50000">
+                <div class="text-center my-3">
+                    <h2><a class="carousel-links carousel-text mb-2" href="https://journal.benjaminpersitz.dev">Journal</a></h2>
+                </div>
+                <img src="/images/Journal.png" class="d-block w-100 carousel-photo" alt="...">
+                <div class="text-center my-3">
+                    <p class="carousel-text fs-4 mt-3">Full-stack Node JS App To Share Your Daily Thoughts.. </p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    <div id="aboutContainer"class="px-0-sm d-flex flex-column justify-content-center hide content-container">
+        <div class="contact-container mb-2">
+            <p class="about-text">Contact Me: </p>
+            <a href="https://www.linkedin.com/in/benjamin-joseph-persitz/"><i class=" me-3 contact-icon fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/northendben"><i class=" me-3 contact-icon fa-brands fa-github"></i></a>
+            <a href="mailto:benpersitz@gmail.com"><i class=" me-3 contact-icon fa-solid fa-envelope"></i></a>
+        </div>
+        <p class="about-text">I am a technically oriented <span class="emphasis">solutions consultant</span> and <span class="emphasis">professional services</span> veteran who specializes in creating <span class="emphasis">scalable, custom, tailor-made experiences</span> in order to meet client needs. I focus on driving value realization through a deep understanding of available software technologies and client objectives, best-practice consultation, program design, product extension, and data integrations. </p>
+        <p class="about-text"> I have experience leading teams and building scalable processes in <span class="emphasis">Technical Support</span> and <span class="emphasis">Professional Services</span>, and working in high pressure situations with <span class="emphasis">enterprise level clients</span> on the world's biggest events.</p>
+        <p class="about-text">I am a code-dabbler with full stack development knowledge including <span class="emphasis">Javascript</span> (NodeJS, Vanilla Javascript, React), <span class="emphasis">Python</span> (Flask), and have extensive experience working with <span class="emphasis">REST APIs</span>. I am familiar with both SQL and No-SQL databases. I mostly code because I enjoy it, but I've also used Python and Javascript in my day to day job in the past. </p>
+        <p class="about-text">I'm always open to new opportunities. Please <span class="emphasis">contact me</span> if you would like to work together.</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/intro.js"></script>
+    <script src="/mobileNav.js"></script>
+</body>
+</html>
